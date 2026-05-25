@@ -6,7 +6,7 @@ import "../style/App.css"
 import {useNavigate} from "react-router-dom"
 
 function Login() {
-const [userData, setUserData] = useState()
+const [userData, setUserData] = useState({})
 const navigate =  useNavigate()
 
 useEffect(()=>{
@@ -21,7 +21,7 @@ const handleLogin =async () => {
       method:"post",
       body:JSON.stringify(userData),
       headers:{
-        "Content-Type":"Application/Json"
+        "Content-Type":"application/json"
       }
     })
   result = await result.json()
@@ -29,6 +29,7 @@ const handleLogin =async () => {
         
         document.cookie =`token= ${result.token}`
         localStorage.setItem('login',userData.email)
+
         window.dispatchEvent(new Event("localStorage-changed"))
         navigate("/")
      }else{

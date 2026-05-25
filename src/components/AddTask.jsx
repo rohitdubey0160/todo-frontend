@@ -15,7 +15,7 @@ function AddTask() {
 
   headers:{
     "Content-Type":"application/json",
-    authorization: localStorage.getItem("token")
+    authorization:`${ localStorage.getItem("token")}`
   }
 })
   result = await result.json()
