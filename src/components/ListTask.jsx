@@ -65,7 +65,7 @@ const deleteMultiple = async()=>{
     credentials:"include",
     body: JSON.stringify(selectedTasks),
     headers:{
-      "Content-type":"Application/json"
+      "Content-type":"application/json"
     }
   })
 

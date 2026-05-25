@@ -28,7 +28,7 @@ function SignUp() {
     result = await result.json();
     if (result.success) {
       localStorage.setItem("signup", userData.email);
-      localStorage.setItem("token", result.token);
+     
       navigate("/");
     } else {
       alert("Try after some time");

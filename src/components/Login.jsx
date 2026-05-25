@@ -22,13 +22,12 @@ const handleLogin =async () => {
       body:JSON.stringify(userData),
       headers:{
         "Content-Type":"application/json"
-      }
+      },
+      credentials:"include"
     })
   result = await result.json()
     if(result.success){
-        
-        document.cookie =`token= ${result.token}`
-        localStorage.setItem('login',userData.email)
+        localStorage.setItem("login",userData.email);
 
         window.dispatchEvent(new Event("localStorage-changed"))
         navigate("/")

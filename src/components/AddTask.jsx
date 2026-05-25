@@ -12,10 +12,10 @@ function AddTask() {
   method:"POST",
 
   body:JSON.stringify(taskData),
-
+ credentials:"include",
   headers:{
     "Content-Type":"application/json",
-    authorization:`${ localStorage.getItem("token")}`
+    
   }
 })
   result = await result.json()
