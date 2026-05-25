@@ -3,19 +3,21 @@ import "../style/addTask.css";
 import { useNavigate } from "react-router-dom";
 
 function AddTask() {
-  const [taskData, setTaskData] = useState();
+  const [taskData, setTaskData] = useState({});
 
   let navigate = useNavigate()
   const handleAddTask = async () => {
     // console.log(taskData);
     let result = await fetch("https://todo-backend-zbej.onrender.com/add-task",{
-      method:"post",
-      body:JSON.stringify(taskData),
-      credentials:"include",
-      headers:{
-        "Content-Type":"Application/Json"
-      }
-    })
+  method:"POST",
+
+  body:JSON.stringify(taskData),
+
+  headers:{
+    "Content-Type":"application/json",
+    authorization: localStorage.getItem("token")
+  }
+})
   result = await result.json()
   if(result.success){
     navigate('/')
