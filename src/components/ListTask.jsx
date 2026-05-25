@@ -10,7 +10,7 @@ function ListTask() {
   }, []);
   
   const getListData = async () => {
-    let list = await fetch("http://localhost:3200/tasks",{
+    let list = await fetch("https://todo-backend-zbej.onrender.com/tasks",{
       credentials:"include"
     });
 
@@ -25,7 +25,7 @@ function ListTask() {
   };
 
   const deleteTask = async (id) => {
-    let deleteItem = await fetch("http://localhost:3200/delete/" + id, {
+    let deleteItem = await fetch("https://todo-backend-zbej.onrender.com/delete/" + id, {
       method: "delete",
        credentials:"include",
     });
@@ -60,7 +60,7 @@ function ListTask() {
 }
 
 const deleteMultiple = async()=>{
-  let deleteItem = await fetch("http://localhost:3200/delete-multiple",{
+  let deleteItem = await fetch("https://todo-backend-zbej.onrender.com/delete-multiple",{
     method:"delete",
     credentials:"include",
     body: JSON.stringify(selectedTasks),

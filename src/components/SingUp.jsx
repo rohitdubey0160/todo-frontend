@@ -16,7 +16,7 @@ useEffect(()=>{
 
 const handleSignUp = async () => {
     console.log(userData);
-    let result = await fetch("http://localhost:3200/signup",{
+    let result = await fetch("https://todo-backend-zbej.onrender.com/signup",{
       method:"post",
       body:JSON.stringify(userData),
       headers:{

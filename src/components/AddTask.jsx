@@ -8,7 +8,7 @@ function AddTask() {
   let navigate = useNavigate()
   const handleAddTask = async () => {
     // console.log(taskData);
-    let result = await fetch("http://localhost:3200/add-task",{
+    let result = await fetch("https://todo-backend-zbej.onrender.com/add-task",{
       method:"post",
       body:JSON.stringify(taskData),
       credentials:"include",

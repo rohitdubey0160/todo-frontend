@@ -12,7 +12,7 @@ getTask(id);
  },[]);
 
  const getTask = async(id)=>{
-  let task = await fetch("http://localhost:3200/task/" + id,{
+  let task = await fetch("https://todo-backend-zbej.onrender.com/task/" + id,{
       credentials:"include"
   });
    task = await task.json();
@@ -23,7 +23,7 @@ getTask(id);
 
  const updateTask = async()=>{
   console.log("data fetched ",taskData);
-  let task = await fetch("http://localhost:3200/update-task",{
+  let task = await fetch("https://todo-backend-zbej.onrender.com/update-task",{
     method:"put",
     body:JSON.stringify(taskData),
      credentials:"include",
